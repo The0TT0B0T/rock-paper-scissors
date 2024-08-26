@@ -1,20 +1,22 @@
 // Write the logic to get the computer choice
 // The game will be played against the computer
 // You will write a function that randomly returns "rock", "paper", and "scissors"
+let humanScore = 0;
+let computerScore = 0;
 
-const getComputerChoice = (min, max) => {
-    min = Math.ceil(min);
-    max = Math.ceil(max);
-    if (Math.floor(Math.random() * (min + max) + min) === 1) {
+const getComputerChoice = () => {
+    const random = Math.floor(Math.random() * 3) + 1
+    if (random === 1) {
         return 'Rock';
     }
-    else if (Math.floor(Math.random() * (min + max) + min) === 2) {
+    else if (random === 2) {
         return 'Paper';
     }
     else return 'Scissors';
 }
-const input = prompt("Enter a rock, paper, or scissors");
+
 const getHumanChoice = () => {
+    const input = prompt("Enter a rock, paper, or scissors");
     if(input === 'Rock') {
         return 'Rock';
     }
@@ -23,5 +25,10 @@ const getHumanChoice = () => {
     }
     else return 'Scissors';
 };
+
+const playRound = (humanChoice, computerChoice) => {
+    
+};
+
 console.log(getHumanChoice());
-console.log(getComputerChoice(1, 3));
+console.log(getComputerChoice());
