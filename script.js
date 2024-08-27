@@ -4,6 +4,7 @@
 let humanScore = 0;
 let computerScore = 0;
 
+// Computer Player
 const getComputerChoice = () => {
     const random = Math.floor(Math.random() * 3) + 1
     if (random === 1) {
@@ -19,7 +20,7 @@ const getComputerChoice = () => {
     }
 }
 
-
+// Human Player
 const getHumanChoice = () => {
     const input = prompt("Enter a rock, paper, or scissors").toLowerCase();
     if(input === 'rock') {
@@ -37,11 +38,7 @@ const getHumanChoice = () => {
     }
 };
 
-//humanChoice and computerChoice are parameters for the human computerChoice and humanChoice as arguments
-
-
-
-
+// Play game functionality
 const playGame = () => {
     let humanScore = 0;
     let computerScore = 0;
