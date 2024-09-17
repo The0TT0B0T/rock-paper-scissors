@@ -1,6 +1,13 @@
 // Write the logic to get the computer choice
 // The game will be played against the computer
 // You will write a function that randomly returns "rock", "paper", and "scissors"
+
+const playBtn = document.querySelector('.playGame');
+const results = document.querySelector('.container');
+
+
+
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -59,22 +66,33 @@ const playGame = () => {
          }
      };
      
-
-     for (let i = 1; i <=5; i++) {
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-        console.log(playRound(humanChoice, computerChoice));
-        console.log(`Your Score = ${humanScore}`);
-        console.log(`Computer's Score = ${computerScore}`);
+// Code for five rounds
+    //  for (let i = 1; i <=5; i++) {
+    //     const humanChoice = getHumanChoice();
+    //     const computerChoice = getComputerChoice();
+    //     console.log(playRound(humanChoice, computerChoice));
+    //     console.log(`Your Score = ${humanScore}`);
+    //     console.log(`Computer's Score = ${computerScore}`);
         
-     }
-     if(humanScore > computerScore) {
-        console.log("You win the Game!");
-     }
-     else {
-        console.log("Game Over! Computer Wins!");
-     }
+    //  }
+    //  if(humanScore > computerScore) {
+    //     console.log("You win the Game!");
+    //  }
+    //  else {
+    //     console.log("Game Over! Computer Wins!");
+    //  }
 };
-playGame();
+playBtn.addEventListener('click', () => {
+    playGame();
+    const humanTurn = document.createElement('button');
+    const computerTurn = document.createElement('button');
+    computerTurn.textContent = 'Computer Turn';
+    humanTurn.textContent = 'Your Turn';
+    results.appendChild(humanTurn);
+    results.appendChild(computerTurn);
+    
+    humanTurn.addEventListener('click', getHumanChoice());
+    computerTurn.addEventListener('click', getComputerChoice());
+});
 
-
+console.log(playBtn);
